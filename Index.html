@@ -10,7 +10,7 @@
     <!-- Screen and clear key -->
     <div class="top">
         <span class="clear">C</span>
-        <div class="screen"></div>
+        <div class="screen" id="screenText"></div>
     </div>
 
     <div class="keys">
@@ -29,11 +29,23 @@
         <span class="operator">÷</span>
         <span>0</span>
         <span>.</span>
-        <span class="eval">=</span>
+        <span class="eval" id="equal">=</span>
         <span class="operator">x</span>
     </div>
+
+</div>
+<div id="ajax">
+    <textarea name="NumbersAPI" id="nApi" cols="30" rows="10" placeholder="Here you will see interesting fact about the
+    number you got in your equlation">
+
+    </textarea>
+
+    <script type="text/javascript" src="script.js">
+
+    </script>
+
 </div>
 
-<script type="text/javascript" src="script.js"></script>
+
 </body>
 </html>

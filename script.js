@@ -22,6 +22,50 @@ for(var i = 0; i < keys.length; i++) {
         else if(btnVal == '=') {
             var equation = inputVal;
             var lastChar = equation[equation.length - 1];
+            /*ide kell a cuccost irnom XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxXXXXXXXXXXXXx*/
+            var apiMessages = [];
+
+                var httpRequest;
+                document.getElementById("equal").onclick = function()
+                {
+                    var number = document.getElementById("screenText").innerHTML;
+                    intNumb = Number(number);
+                    var urlText = 'http://numbersapi.com/' + number;
+
+                    httpRequest = new XMLHttpRequest();
+
+                    if (!httpRequest) {
+                        alert('Giving up :( Cannot create an XMLHTTP instance');
+                        return false;
+                    }
+                    httpRequest.onreadystatechange = alertContents;
+                    httpRequest.open('GET', urlText);
+                    httpRequest.send();
+
+
+                    function alertContents() {
+                        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+                            if (httpRequest.status === 200) {
+                                document.getElementById("nApi").value = httpRequest.responseText;
+                            } else {
+                                alert('There was a problem with the request.');
+                            }
+                        }
+                    }
+                    apiMessages[intNumb] = document.getElementById("nApi").value;
+
+                    console.log(apiMessages[intNumb]);
+
+
+                };
+
+
+
+
+
+
+
+                /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxx*/
 
             // Replace all instances of x and ÷ with * and / respectively. This can be done easily using regex and the 'g' tag which will replace all instances of the matched character/substring
             equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
