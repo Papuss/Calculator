@@ -22,7 +22,6 @@ for(var i = 0; i < keys.length; i++) {
         else if(btnVal == '=') {
             var equation = inputVal;
             var lastChar = equation[equation.length - 1];
-            /*ide kell a cuccost irnom XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxXXXXXXXXXXXXx*/
             var apiMessages = [];
 
                 var httpRequest;
@@ -59,14 +58,7 @@ for(var i = 0; i < keys.length; i++) {
 
                 };
 
-
-
-
-
-
-
-                /* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXxxxx*/
-
+               
             // Replace all instances of x and ÷ with * and / respectively. This can be done easily using regex and the 'g' tag which will replace all instances of the matched character/substring
             equation = equation.replace(/x/g, '*').replace(/÷/g, '/');
 
